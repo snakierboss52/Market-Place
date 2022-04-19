@@ -21,6 +21,6 @@ public class Categoria {
     @Column(name = "id_categoria")
     private Long id;
     private String descripcion;
-    private boolean estado;
+    private Boolean estado;
 
 }
