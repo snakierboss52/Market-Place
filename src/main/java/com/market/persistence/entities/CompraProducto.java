@@ -2,10 +2,14 @@ package com.market.persistence.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.web.servlet.mvc.condition.ProducesRequestCondition;
 
-import javax.persistence.*;
-import java.math.BigDecimal;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
+import javax.persistence.Table;
+
 
 @Setter
 @Getter
@@ -16,10 +20,11 @@ public class CompraProducto {
     @EmbeddedId //Llave compuesta
     private CompraProductoPK id;
     private Integer cantidad;
-    private BigDecimal total;
+    private double total;
     private Boolean estado;
 
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 

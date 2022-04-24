@@ -12,7 +12,7 @@ public class PurchaseItem {
 
     private int productId;
     private int quantity;
-    private BigDecimal total;
+    private double total;
     private boolean active;
 
 }

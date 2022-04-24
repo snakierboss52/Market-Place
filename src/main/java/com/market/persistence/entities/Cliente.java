@@ -18,12 +18,12 @@ import java.util.List;
 public class Cliente {
 
     @Id
-    private Long id;
+    private String id;
     private String nombre;
 
     @Column(name = "apellidos")
     private String apelido;
-    private Integer celular;
+    private Long celular;
     private String direccion;
 
     @Column(name = "correo_electronico")

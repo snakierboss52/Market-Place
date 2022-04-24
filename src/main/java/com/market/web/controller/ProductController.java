@@ -3,6 +3,7 @@ package com.market.web.controller;
 
 import com.market.domain.Product;
 import com.market.domain.services.ProductService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping()
+    @ApiOperation("Get all market products")
     public ResponseEntity<List<Product>> getAllProducts(){
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
     }
